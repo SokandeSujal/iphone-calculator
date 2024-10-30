@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 375px;
+    padding: 20px;
+    background-color: #000;
+}
+
+.display {
+    height: 120px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+#result {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    color: #fff;
+    text-align: right;
+    font-size: 80px;
+    font-weight: 300;
+    padding-right: 20px;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: filter 0.3s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:active {
+    transform: scale(0.95);
+    filter: brightness(130%);
+}
+
+.number {
+    background-color: #333333;
+    color: #fff;
+}
+
+.function {
+    background-color: #a5a5a5;
+    color: #000;
+}
+
+.operator {
+    background-color: #ff9f0a;
+    color: #fff;
+}
+
+.operator.active {
+    background-color: #fff;
+    color: #ff9f0a;
+}
+
+.zero {
+    grid-column: span 2;
+    width: 162px;
+    border-radius: 37.5px;
+    justify-content: flex-start;
+    padding-left: 30px;
+}
+
+/* Animation for button press */
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.btn-pressed {
+    animation: buttonPress 0.15s ease-in-out;
+}
+
+/* Dynamic text sizing */
+@media (max-width: 400px) {
+    .calculator {
+        padding: 10px;
+    }
+    
+    .btn {
+        width: 65px;
+        height: 65px;
+        font-size: 26px;
+    }
+    
+    .zero {
+        width: 142px;
+    }
+    
+    #result {
+        font-size: 60px;
+    }
+}
+
+/* Prevent text selection */
+.btn {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Glass effect on hover */
+.btn:hover {
+    filter: brightness(120%);
+}
