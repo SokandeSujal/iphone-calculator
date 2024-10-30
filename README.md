@@ -18,7 +18,7 @@ A web-based calculator that replicates the design and functionality of the iPhon
 
 ## Demo
 
-You can view a live demo [here](link-to-your-demo).
+You can view a live demo [here](https://sokandesujal.github.io/iphone-calculator/).
 
 ## Installation
 
